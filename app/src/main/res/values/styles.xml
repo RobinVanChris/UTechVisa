@@ -1,0 +1,22 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+
+
+    <style name="Round">
+        <item name="android:background" >@drawable/round </item>
+    </style>
+
+    <style name="Round2">
+        <item name="android:background" >@drawable/round2 </item>
+    </style>
+
+    <style name="Round3">
+        <item name="android:background" >@drawable/round3 </item>
+    </style>
+
+
+</resources>

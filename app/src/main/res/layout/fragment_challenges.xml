@@ -1,0 +1,19 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#780002"
+    tools:context="com.majorproject.utech.utechvisa.Challenges">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView 
+    	android:layout_width="match_parent" 
+    	android:layout_height="match_parent"
+        android:text="Challenges"
+        android:layout_gravity="center"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:textSize="75sp"
+        />
+
+</FrameLayout>

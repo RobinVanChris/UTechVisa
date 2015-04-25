@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="NameSpace" >#ffffff</color>
+    <color name="OuterBox" >#505ddf</color>
+    <color name="SignIn" >#ffff00</color>
+</resources>
