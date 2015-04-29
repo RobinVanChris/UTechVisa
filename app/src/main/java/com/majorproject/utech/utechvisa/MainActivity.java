@@ -3,6 +3,8 @@ package com.majorproject.utech.utechvisa;
 import java.util.Locale;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -17,6 +19,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
@@ -137,7 +140,7 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 3;
+            return 4;
         }
 
         @Override
@@ -146,12 +149,14 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
 
             switch (position) {
                 case 0:
-                    return "Challenges".toUpperCase(l);
+                    return "Profile".toUpperCase(l);
                     //return getString(R.string.title_section1).toUpperCase(l);
                 case 1:
-                    return "Notices".toUpperCase(l);
+                    return "Challenges".toUpperCase(l);
                     //return getString(R.string.title_section2).toUpperCase(l);
                 case 2:
+                    return "Notices".toUpperCase(l);
+                case 3:
                     return "LeaderBoard".toUpperCase(l);
 
             }
@@ -175,10 +180,12 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
                 case 0:
                     // The first section of the app is the most interesting -- it offers
                     // a launchpad into the other demonstrations in this example application.
-                    return new Challenges();
+                    return new Profile();
                 case 1:
-                    return new Notices();
+                    return new Challenges();
                 case 2:
+                    return new Notices();
+                case 3:
                     return new Leaderboard();
                 default:
                     // The other sections of the app are dummy placeholders.
@@ -244,10 +251,24 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
 
     public static class Profile extends Fragment {
 
+        /*ImageView profile_pic;
+        RoundImage roundedImage;
+        ReturnBit r;*/
+
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_leader_board, container, false);
+            View rootView = inflater.inflate(R.layout.fragment_profile, container, false);
+
+            /*roundedImage = new RoundImage(r.round());
+            profile_pic.setImageDrawable(roundedImage);*/
+
+            //r.round();
+
+          /*  profile_pic = (ImageView) findViewById(R.id.profile_pic);
+            Bitmap bm = BitmapFactory.decodeResource(getResources(), R.drawable.batman_arkham);
+            roundedImage = new RoundImage(bm);
+            profile_pic.setImageDrawable(roundedImage);*/
 
             return rootView;
 
