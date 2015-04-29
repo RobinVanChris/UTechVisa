@@ -17,11 +17,31 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_gravity="center"
-            android:layout_marginTop="100dp"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="50dp"
             android:src= "@drawable/batman_arkham"
-
-
         />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:text="The Dark Knight"
+            android:fontFamily="sans-serif"
+            android:textSize="40sp"
+            android:textColor="#ffffffff"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="ID: admin"
+            android:fontFamily="sans-serif"
+            android:textSize="40sp"
+            android:textColor="#ffffffff"
+            />
 
     </LinearLayout>
 

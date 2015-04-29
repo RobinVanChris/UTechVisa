@@ -32,7 +32,7 @@ public class Login extends Activity implements View.OnClickListener{
 
     JSONParser jsonParser = new JSONParser();
 
-    private static final String LOGIN_URL = "http://127.0.0.1:80/UTechVisa/login.php";
+    private static final String LOGIN_URL = "http://10.0.2.2:80/UTechVisa/login.php";
 
     //JSON element ids from repsonse of php script:
     private static final String TAG_SUCCESS = "success";
@@ -72,30 +72,6 @@ public class Login extends Activity implements View.OnClickListener{
         }
 
     }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_login, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-
     class AttemptLogin extends AsyncTask<String, String, String> {
 
         /**
@@ -122,30 +98,27 @@ public class Login extends Activity implements View.OnClickListener{
             String password = Password.getText().toString();
             try {
                 // Building Parameters
-                List<NameValuePair> params = new ArrayList<NameValuePair>();
-                params.add(new BasicNameValuePair("ID", username));
-                params.add(new BasicNameValuePair("password", password));
+                    List<NameValuePair> params = new ArrayList<NameValuePair>();
+                    params.add(new BasicNameValuePair("ID", username));
+                     params.add(new BasicNameValuePair("password", password));
 
-                Log.d("request!", "starting");
-                // getting product details by making HTTP request
-                JSONObject json = jsonParser.makeHttpRequest(LOGIN_URL, "POST", params);
+                    Log.d("request!", "starting");
+                    // getting product details by making HTTP request
+                    JSONObject json = jsonParser.makeHttpRequest(LOGIN_URL, "POST", params);
 
-                // check your log for json response
-                Log.d("Login attempt", json.toString());
+                    // check your log for json response
+                    Log.d("Login attempt", json.toString());
 
                 // json success tag
-                success = json.getInt(TAG_SUCCESS);
-                if (success == 1) {
-                    Log.d("Login Successful!", json.toString());
-                   /* Intent i = new Intent(Login.this, WelcomeScreen.class);
-                    finish();
-                    startActivity(i);*/
-                    Intent i = new Intent(Login.this, WelcomeScreen.class );
-                    startActivity(i);
-                    finish();
+                    success = json.getInt(TAG_SUCCESS);
+                    if (success == 1) {
+                        Log.d("Login Successful!", json.toString());
+                        Intent i = new Intent(Login.this, WelcomeScreen.class);
+                        finish();
+                        startActivity(i);
 
-                    return json.getString(TAG_MESSAGE);
-                }
+                        return json.getString(TAG_MESSAGE);
+                    }
                 else
                 {
                     Log.d("Login Failure!", json.getString(TAG_MESSAGE));
