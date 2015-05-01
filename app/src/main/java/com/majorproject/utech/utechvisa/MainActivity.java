@@ -251,24 +251,18 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
 
     public static class Profile extends Fragment {
 
-        /*ImageView profile_pic;
+        ImageView profile_pic;
         RoundImage roundedImage;
-        ReturnBit r;*/
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_profile, container, false);
 
-            /*roundedImage = new RoundImage(r.round());
-            profile_pic.setImageDrawable(roundedImage);*/
-
-            //r.round();
-
-          /*  profile_pic = (ImageView) findViewById(R.id.profile_pic);
-            Bitmap bm = BitmapFactory.decodeResource(getResources(), R.drawable.batman_arkham);
+            profile_pic = (ImageView) rootView.findViewById(R.id.profile_pic);
+            Bitmap bm = BitmapFactory.decodeResource(getResources(), R.drawable.profile);
             roundedImage = new RoundImage(bm);
-            profile_pic.setImageDrawable(roundedImage);*/
+            profile_pic.setImageDrawable(roundedImage);
 
             return rootView;
 

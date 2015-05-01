@@ -17,30 +17,49 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_gravity="center"
-            android:scaleType="centerCrop"
-            android:layout_marginTop="50dp"
-            android:src= "@drawable/batman_arkham"
+            android:layout_marginTop="30dp"
+            android:src= "@drawable/profile"
         />
-
+        
         <TextView
+            android:id="@+id/user"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Admin"
+            android:textSize="50sp"
+            android:layout_marginTop="30dp"
             android:layout_gravity="center"
-            android:layout_marginTop="50dp"
-            android:text="The Dark Knight"
-            android:fontFamily="sans-serif"
-            android:textSize="40sp"
-            android:textColor="#ffffffff"
+            android:textColor="#ffffff"
             />
         <TextView
+            android:id="@+id/iden"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Admin"
+            android:textSize="30sp"
+            android:layout_marginTop="5dp"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:text="ID: admin"
-            android:fontFamily="sans-serif"
+            android:textColor="#ffffff"
+            />
+        <TextView
+            android:id="@+id/faculty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FENC"
             android:textSize="40sp"
-            android:textColor="#ffffffff"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"
+            android:textColor="#ffffff"
+            />
+        <TextView
+            android:id="@+id/score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Score: 5"
+            android:textSize="30sp"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"
+            android:textColor="#ffffff"
             />
 
     </LinearLayout>

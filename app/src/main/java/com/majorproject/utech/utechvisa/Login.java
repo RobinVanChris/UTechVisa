@@ -98,27 +98,27 @@ public class Login extends Activity implements View.OnClickListener{
             String password = Password.getText().toString();
             try {
                 // Building Parameters
-                    List<NameValuePair> params = new ArrayList<NameValuePair>();
-                    params.add(new BasicNameValuePair("ID", username));
-                     params.add(new BasicNameValuePair("password", password));
+                List<NameValuePair> params = new ArrayList<NameValuePair>();
+                params.add(new BasicNameValuePair("ID", username));
+                params.add(new BasicNameValuePair("password", password));
 
-                    Log.d("request!", "starting");
-                    // getting product details by making HTTP request
-                    JSONObject json = jsonParser.makeHttpRequest(LOGIN_URL, "POST", params);
+                Log.d("request!", "starting");
+                // getting product details by making HTTP request
+                JSONObject json = jsonParser.makeHttpRequest(LOGIN_URL, "POST", params);
 
-                    // check your log for json response
-                    Log.d("Login attempt", json.toString());
+                // check your log for json response
+                Log.d("Login attempt", json.toString());
 
                 // json success tag
-                    success = json.getInt(TAG_SUCCESS);
-                    if (success == 1) {
-                        Log.d("Login Successful!", json.toString());
-                        Intent i = new Intent(Login.this, WelcomeScreen.class);
-                        finish();
-                        startActivity(i);
+                success = json.getInt(TAG_SUCCESS);
+                if (success == 1) {
+                    Log.d("Login Successful!", json.toString());
+                    Intent i = new Intent(Login.this, WelcomeScreen.class);
+                    finish();
+                    startActivity(i);
 
-                        return json.getString(TAG_MESSAGE);
-                    }
+                    return json.getString(TAG_MESSAGE);
+                }
                 else
                 {
                     Log.d("Login Failure!", json.getString(TAG_MESSAGE));
