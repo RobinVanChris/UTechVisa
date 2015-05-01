@@ -266,7 +266,7 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
             catch (Exception e){
                 Log.e("log_tage,", "Error in http connection" + e.toString());
                 // Figure out how to reslove this
-                Toast.makeText(getActivity().getApplicationContext(),"Connection fail",Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getActivity().getApplicationContext(),"Connection fail",Toast.LENGTH_SHORT).show();
             }
 
             try {
@@ -284,7 +284,7 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
                 result = sb.toString();
             }catch (Exception e){
                 //check if this causes crashing
-                Toast.makeText(getActivity().getApplicationContext(), "Input reading fail", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getActivity().getApplicationContext(), "Input reading fail", Toast.LENGTH_SHORT).show();
             }
 
             try{
@@ -295,7 +295,7 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
                 {
                     JSONObject json_data = jArray.getJSONObject(i);
 
-                    message.setText(" "+ String.valueOf(json_data.getInt("ID"))+ " " + json_data.getString("messages"));
+                    message.setText(" "+ String.valueOf(json_data.getInt("ID"))+ " " + json_data.getString("message"+ "\n"));
 
                 }
 
@@ -304,8 +304,14 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
 
             catch (JSONException e) {
                 Log.e("log_tag", "Error parsing data" + e.toString());
-
+                e.printStackTrace();
                 Toast.makeText(getActivity().getApplicationContext(), "JsonArray fail", Toast.LENGTH_SHORT).show();
+            }
+            catch (NullPointerException e)
+            {
+                e.printStackTrace();
+                Toast.makeText(getActivity().getApplicationContext(), "Did not Recieve Messages, NullPointer", Toast.LENGTH_SHORT).show();
+
             }
 
             return rootView;
